@@ -5,7 +5,7 @@
 	  <%
 	  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 	  response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-	  response.setDateHeader("Expires", 0); // Proxies., 0 );
+	  response.setDateHeader("Expires", 0); // Proxies., 0 ); 0 );
 	%>
   	<link rel="stylesheet" type="text/css"  href="style.css">
     <title>RBTR System</title>
@@ -14,12 +14,12 @@
 			#first
 			{
 				border-radius : 4px;
-				height : 240px;
-				width : 320px;
+				width:300px;
 				margin-top: 80px;
 				display: block;
-				padding: 16px;
+				padding-bottom:28px;
 				font-family : Arial;
+				text-align:center;
 				margin-left: auto; 
 				margin-right: auto;
 				background-color : #ffffff;
@@ -28,6 +28,8 @@
 			#submit{
 					color : white;
             		margin-top: 16px;
+            		margin-left: auto;
+            		margin-right: auto;
 					border-radius : 4px;
 					padding : 8px;
             		text-decoration : none;
@@ -35,13 +37,13 @@
 					font-size : 16px;
             		}		
             		
-            #textbox{
-					width: 100%; 
-					padding: 8px; 
-            		margin-top: 16px;
-					border-radius: 4px; 
-					border-width: thin; 
-					border-color: #dedede;
+            #logouttext{
+            		font-family: Arial; 
+            		font-size:18px;
+            		text-align:center;
+            		margin: auto auto;
+					padding: 16px;
+					color:#212121;
             		}	
             		
         	#hmenu{
@@ -49,7 +51,7 @@
 					text-align: center;
 					color: #fefefe;
 					font-family: "Arial", sans;
-					width : 100%;
+					margin: auto auto;
 					font-size : 15px;
             		}				
 					
@@ -66,12 +68,9 @@
 	</div>
   
 	  <div id="first">
-			<form:form method="POST" action="/login">
-				<p style="font-family: Arial; font-size:18px; width:100%; text-align:center;">Oops! An Error Occurred.</p>
+				<p id="logouttext">You Have Been Logged Out</p>
 				<br />
-				<input type="submit" value="Login Again" name="submit" id="submit"/>
-				
-			</form:form>
+				<a href="/login" id="submit">Login Again</a>
 		</div>
   </body>
 </body>

@@ -1,11 +1,10 @@
-<%session.invalidate();%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html lang="en">
   <head>    
 	  <%
-	  response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-	  response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-	  response.setDateHeader("Expires", 0); // Proxies., 0 );
+	    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+	    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+	    response.setDateHeader("Expires", 0); // Proxies.
 	%>
   	<link rel="stylesheet" type="text/css"  href="style.css">
     <title>RBTR System</title>
@@ -49,7 +48,7 @@
 					text-align: center;
 					color: #fefefe;
 					font-family: "Arial", sans;
-					width : 100%;
+					margin: auto auto;
 					font-size : 15px;
             		}				
 					
@@ -66,10 +65,14 @@
 	</div>
   
 	  <div id="first">
-			<form:form method="POST" action="/login">
-				<p style="font-family: Arial; font-size:18px; width:100%; text-align:center;">Oops! An Error Occurred.</p>
-				<br />
-				<input type="submit" value="Login Again" name="submit" id="submit"/>
+			<form:form method="POST" action="/dashboard">
+				<p style="font-family: Arial; font-size:18px;">User Login</p>
+				<input id="textbox" placeholder="Username" path="username" type="text" name="username"/>
+				<input id="textbox" placeholder="Password" path="password" type="password" name="password"/>
+				<input type="submit" value="Login" name="submit" id="submit"/>
+				<p style="font-family: Arial; font-size:12px; color:#f44336;">
+					${error}
+				</p>
 				
 			</form:form>
 		</div>
